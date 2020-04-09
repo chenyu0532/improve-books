@@ -261,35 +261,9 @@
 
 			2 上下文是可变的，动态的，那么不要使用箭头函数
 
-3. 对象：js六种主要类型：string number boolean null undefined object
-		   九种内置对象：String Number Boolean Object Function Array Date RegExp(正则表达式) Error
 
-		a[b]:
-			1. b为string，如果不是string,则会先转成string。
-			2. b的字段可以是变量、可计算的
-
-		浅拷贝：Onject.assign(目标对象, 一个或多个源对象)
-
-		a in myobject：会查询整个原型链
-		hasOwnProperty()：只会检查属性是否在object上
-
-		构造函数：class CoolGuy {
-					specialTrick = nothing
-					CoolGuy( trick ) {
-						specialTrick = trick
-					}
-					showOff() {
-						output( "Here's my trick: ", specialTrick )
-					}
-				}
-				let Joe = new CoolGuy( "jumping rope" )
-				Joe.showOff()
-				//CoolGuy 类有一个 CoolGuy() 构造函数，执行 new CoolGuy() 时实际上调用的就是
-					它。构造函数会返回一个对象（也就是类的一个实例），之后我们可以在这个对象上调用
-					showOff() 方法，来输出指定 CoolGuy 的特长。 类构造函数属于类，而且通常和类同名
-
-4.  js对象有一个特殊的内置属性 [[Prototype]]，是对于其他对象的引用
+3.  js对象有一个特殊的内置属性 [[Prototype]]，是对于其他对象的引用
 	作用：当试图引用对象的属性时会触发[[Get]] 操作，比如 myObject.a 。对于默认的 [[Get]] 操作来说，第一步是检查对象本身是
 		 否有这个属性，如果有的话就使用它。但是如果 a 不在 myObject 中，就需要使用对象的 [[Prototype]] 链了。
-		对于默认的 [[Get]] 操作来说，如果无法在对象本身找到需要的属性，就会继续访问对象的 [[Prototype]] 链：
+		对于默认的 [[Get]] 操作来说，如果无法在对象本身找到需要的属性，就会继续访问对象的 [[Prototype]] 链。
 		
